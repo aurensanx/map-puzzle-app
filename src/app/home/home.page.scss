@@ -1,1 +1,48 @@
+main {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
 
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  flex-wrap: wrap;
+
+  //.item {
+  //}
+}
+
+//.grid-container {
+//  display: grid;
+//  grid-template-columns: repeat(4, 1fr);
+//  grid-template-rows: repeat(2, 1fr);
+//  justify-items: center;
+//  align-items: center;
+//  height: 100%;
+//}
+
+
+//@for $i from 0 through 8 {
+//  .item-#{$i} {
+//    grid-area: item-#{$i};
+//  }
+//}
+//
+//
+//.grid-container {
+//  //padding: 10% 0 10% 0;
+//  height: 100%;
+//  //width: 100%;
+//  display: grid;
+//  grid-template-columns: repeat(3, 1fr);
+//  grid-template-rows: repeat(3, 1fr);
+//  justify-items: center;
+//  align-items: center;
+//  grid-template-areas:
+//    "item-0 item-1 item-2"
+//    "item-3 item-4 item-5 "
+//    "item-6 item-7 item-8";
+//}

@@ -1,0 +1,13 @@
+<div class="general-map-container">
+  <app-map-left-bar></app-map-left-bar>
+  <div class="map-container">
+    <h1 *ngIf="mapService.currentArea">{{mapService.currentArea.n}}</h1>
+    <svg id="rootSVG" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+
+  <app-map-right-bar [score]="mapService.score"></app-map-right-bar>
+</div>
+
+
+
+

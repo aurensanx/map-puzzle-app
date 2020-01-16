@@ -1,14 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<main class="flex-container">
+  <div [ngClass]="'item-'+i" *ngFor="let map of maps; let i = index"><a [routerLink]="['/map',map.id]">{{map.name}}</a>
   </div>
-</ion-content>
+</main>
+
+
