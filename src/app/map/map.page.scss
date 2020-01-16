@@ -1,6 +1,6 @@
-#rootSVG {
-  height: 90%;
-}
+//#rootSVG {
+//  height: 95%;
+//}
 
 .general-map-container {
   display: flex;
@@ -19,7 +19,7 @@
       fill: white;
       //transition: fill 2s ease-out;
       stroke: #a9a9a9;
-      stroke-width: 1;
+      stroke-width: 2;
 
       //&:hover:not(.correct):not(.wrong) {
       //  //fill: #FFBD33;

@@ -18,8 +18,6 @@ export class MapPage implements OnInit {
 
     ngOnInit() {
 
-        this.mapService.initScore();
-
         this.route.paramMap.subscribe(({params}: any) => {
             this.httpClient.get(`./assets/maps/${params.id}.json`).subscribe((data: any) => {
                 this.mapService.draw('#rootSVG', data);

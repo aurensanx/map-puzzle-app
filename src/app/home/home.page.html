@@ -1,6 +1,6 @@
 <main class="flex-container">
-  <div [ngClass]="'item-'+i" *ngFor="let map of maps; let i = index"><a [routerLink]="['/map',map.id]">{{map.name}}</a>
-  </div>
+    <div class="item" *ngFor="let map of maps"><a [routerLink]="['/map',map.id]">{{map.name}}</a>
+    </div>
 </main>
 
 
