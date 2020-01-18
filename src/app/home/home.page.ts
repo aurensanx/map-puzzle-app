@@ -22,7 +22,7 @@ export class HomePage {
     {name: 'España', id: 'spain'},
     {name: 'Aragón', id: 'aragon'},
     {name: 'Cinco Villas', id: 'cinco-villas'},
-    // {name: 'La Litera', id: 'litera'},
+    {name: 'La Litera', id: 'litera'},
   ];
 
   constructor() {}

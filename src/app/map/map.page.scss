@@ -1,19 +1,37 @@
-//#rootSVG {
-//  height: 95%;
-//}
+$header-height: 2.5em;
+$map-height: calc(100% - 2.5em);
 
-.general-map-container {
-  display: flex;
+#mapContainerId {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
-  .map-container {
+
+  #mapHeaderId {
+    height: $header-height;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: lighten(black, 20%);
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  #mapId {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 80%;
+    height: $map-height;
+    //width: 100%;
 
     .map-area {
       fill: white;
@@ -37,18 +55,35 @@
       }
     }
   }
-
-  app-map-right-bar, app-map-left-bar {
-    width: 10%;
-  }
 }
 
 
-//h1 {
-//  &:hover {
-//    transition: opacity 1s;
-//    opacity: 0.1;
-//  }
-//}
+@media screen and (orientation: landscape) {
+  #mapContainerId {
+    flex-direction: row;
+
+    #mapHeaderId {
+      height: 100%;
+      width: $header-height;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      text-transform: uppercase;
+      flex-direction: row;
+      h1 {
+        font-size: 0.8rem;
+      }
+    }
+
+    #mapId {
+      height: 100%;
+      width: $map-height;
+    }
+  }
+
+}
+
+
+
+
 
 
