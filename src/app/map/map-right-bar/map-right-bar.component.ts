@@ -15,7 +15,7 @@ export class MapRightBarComponent implements OnInit, OnChanges, OnDestroy {
     timerSubscription: Subscription;
     timerSeconds: string;
 
-    wrongGuessesMapping: { [k: string]: string } = {'=0': '0 fallos', '=1': '1 fallo', other: '# fallos'};
+    // wrongGuessesMapping: { [k: string]: string } = {'=0': '0 fallos', '=1': '1 fallo', other: '# fallos'};
 
     constructor() {
     }

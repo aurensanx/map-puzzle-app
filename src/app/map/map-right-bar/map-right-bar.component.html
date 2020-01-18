@@ -1,6 +1,7 @@
 <div class="flex-container">
-  <p>{{score.rightGuesses}} / {{score.totalAreas}}</p>
-  <p>{{score.wrongGuesses | i18nPlural: wrongGuessesMapping }}</p>
+  <p>{{score.rightGuesses}}/{{score.totalAreas}}</p>
+<!--  <p style="color: red">{{score.wrongGuesses | i18nPlural: wrongGuessesMapping }}</p>-->
+  <p class="score-wrong">{{score.wrongGuesses}}</p>
   <p>{{timerSeconds}}</p>
   <!--  <button>-->
   <!--    <mat-icon [inline]="true">undo</mat-icon>-->

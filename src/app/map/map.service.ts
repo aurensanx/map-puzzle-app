@@ -18,14 +18,17 @@ export class MapService {
     pendingAreas: AreaModel[];
     guessedAreas: string[];
     currentArea: AreaModel;
-    score: MapScore;
+    score: MapScore = {
+        rightGuesses: 0,
+        wrongGuesses: 0,
+        totalAreas: undefined,
+        finished: false,
+    };
 
     constructor() {
     }
 
     draw = (id, dataPath: AreaModel[]) => {
-
-        this.score.totalAreas = dataPath.length;
 
         const g = d3.select(id).append('g');
 

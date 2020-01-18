@@ -1,14 +1,33 @@
+@import '../map.page.scss';
+
 .flex-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
-  button {
-    margin: 1rem 1rem 1rem 0;
-  }
+
   p {
-    //padding-right: 1rem;
-    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    font-size: $text-size * 1.5;
+
+    &.score-wrong {
+      color: red;
+      font-weight: bolder;
+    }
+  }
+
+}
+
+@media screen and (orientation: landscape) {
+  .flex-container {
+    flex-direction: column;
+
+    p {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      text-transform: uppercase;
+    }
   }
 }

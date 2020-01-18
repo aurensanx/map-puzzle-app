@@ -23,16 +23,17 @@ export class MapPage implements OnInit, OnDestroy {
     ngOnInit() {
 
         this.subscription = this.route.paramMap.subscribe(({params}: any) => {
-
-            this.mapService.score = {
-                rightGuesses: 0,
-                wrongGuesses: 0,
-                totalAreas: undefined,
-                finished: false,
-            };
-
+            this.mapService.currentArea = undefined;
             this.httpClient.get(`./assets/maps/${params.id}.json`).subscribe((data: any) => {
+                
                 this.mapService.draw('#rootSVG', data);
+
+                this.mapService.score = {
+                    rightGuesses: 0,
+                    wrongGuesses: 0,
+                    totalAreas: data.length,
+                    finished: false,
+                };
             });
 
         });
