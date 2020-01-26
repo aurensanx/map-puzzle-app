@@ -4,6 +4,8 @@
 
 #Build
 
+- +1 version config.xml
+
 - ionic cordova build android --prod --release
 
 - keytool -genkey -v -keystore puzzle-map.keystore -alias puzzle-map -keyalg RSA -keysize 2048 -validity 10000 (first time)

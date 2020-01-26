@@ -10,6 +10,8 @@ $map-width: calc(100% - #{$text-container-size * 5});
 $score-width: $text-container-size * 2;
 
 
+
+
 #mapContainerId {
   height: 100%;
   width: 100%;
@@ -31,7 +33,7 @@ $score-width: $text-container-size * 2;
 
     h1 {
       margin: 0;
-      font-size: $text-size * 2;
+      font-size: 100%;
     }
   }
 
@@ -41,13 +43,18 @@ $score-width: $text-container-size * 2;
     align-items: center;
     justify-content: center;
     height: $map-height;
-    //width: 100%;
+    width: 100%;
+
+    #rootSVG {
+      height: 100%;
+      width: 100%;
+    }
 
     .map-area {
       fill: white;
       //transition: fill 2s ease-out;
-      stroke: #a9a9a9;
-      stroke-width: 2;
+      stroke: black;
+      stroke-width: 0.25;
 
       //&:hover:not(.correct):not(.wrong) {
       //  //fill: #FFBD33;
@@ -63,6 +70,12 @@ $score-width: $text-container-size * 2;
       &.wrong {
         fill: red;
       }
+    }
+
+    .line-path {
+      fill: none;
+      stroke: white;
+      stroke-width: 4;
     }
   }
 
@@ -89,7 +102,7 @@ $score-width: $text-container-size * 2;
       //text-justify: inter-character;
 
       h1 {
-        font-size: $text-size * 1.5;
+        font-size: 80%;
       }
     }
 

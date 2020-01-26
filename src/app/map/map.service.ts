@@ -28,11 +28,12 @@ export class MapService {
     constructor() {
     }
 
-    draw = (id, dataPath: AreaModel[]) => {
+    draw = (id, dataPath: AreaModel[], linePath: AreaModel[]) => {
 
-        const g = d3.select(id).append('g');
+        const gArea = d3.select(id).append('g');
+        const gArray = [gArea];
 
-        g.selectAll('.map-area')
+        gArea.selectAll('.map-area')
             .data(dataPath).enter().append('path')
             .attr('class', 'map-area')
             .attr('d', d => d.d)
@@ -40,12 +41,23 @@ export class MapService {
             .attr('pointer-events', 'fill')
             .on('click', this.onClick);
 
+        if (linePath.length) {
+            const gLine = d3.select(id).append('g');
+            gLine.selectAll('.map-area')
+                .data(linePath).enter().append('path')
+                .attr('class', 'line-path')
+                .attr('d', d => d.d);
+            gArray.push(gLine);
+        }
+
         d3.select(id)
-            .attr('width', 1920)
-            .attr('height', 1080)
+            .attr('width', 1000)
+            .attr('height', 1000)
             .call(d3.zoom()
-                .scaleExtent([0.5, 8])
-                .on('zoom', () => this.onZoom(g)));
+                .scaleExtent([0.5, 1000])
+                .on('zoom', () => this.onZoom(gArray)))
+            .on('dblclick.zoom', null);
+
 
         this.pendingAreas = dataPath;
         this.guessedAreas = [];
@@ -53,8 +65,10 @@ export class MapService {
 
     };
 
-    onZoom(svg) {
-        svg.attr('transform', d3.event.transform);
+    onZoom(gArray) {
+        gArray.forEach(g => {
+            g.attr('transform', d3.event.transform);
+        });
     }
 
     onClick = (d: AreaModel) => {
