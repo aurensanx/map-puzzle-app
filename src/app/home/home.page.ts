@@ -17,7 +17,7 @@ export class HomePage {
     {name: 'Europa', id: 'europe'},
     {name: 'África', id: 'africa'},
     {name: 'Asia', id: 'asia'},
-    {name: 'Oceania', id: 'oceania'},
+    {name: 'Oceanía', id: 'oceania'},
     {name: 'América del Norte', id: 'north-america'},
     {name: 'América del Sur', id: 'south-america'},
     {name: 'España', id: 'spain'},
