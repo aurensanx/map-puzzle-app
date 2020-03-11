@@ -1,8 +1,16 @@
-#Debug on device
+# Map Puzzle
+
+Ionic + Angular + D3
+
+### Start Local Server
+
+ionic serve --devapp
+
+### Debug on device
 
 - ionic cordova run android --device -l -c
 
-#Build
+### Build
 
 - +1 version config.xml
 
